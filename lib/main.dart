@@ -6,15 +6,9 @@ import 'package:flutter/material.dart';
 import 'controller/product_controller.dart';
 
 void main() {
-  // Khởi tạo ProductApiServiceImpl (API service implementation)
   final ProductApiService apiService = ProductApiServiceImpl();
-
-  // Khởi tạo ProductRepository với apiService
   final ProductRepository productRepository = ProductRepositoryImpl(apiService);
-
-  // Khởi tạo ProductController với repository
   final ProductController productController = ProductController(productRepository);
-
 
   runApp(MyApp(productController: productController));
 }
@@ -27,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter CRUD Example',
+      title: 'Flutter CRUD',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
